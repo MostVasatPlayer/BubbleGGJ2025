@@ -4,6 +4,9 @@ public class CharacterMovement : MonoBehaviour
 {
     public float moveSpeed = 5f; // Karakterin hareket hızı
     public float jumpForce = 10f; // Zıplama kuvveti
+    public Transform firePoint; // Merminin çıkış noktası
+    public GameObject bulletPrefab; // Ateş etmek istediğimiz obje (ör. mermi)
+    public float bulletSpeed = 10f; // Merminin hızı
 
     private Rigidbody2D rb;  // Rigidbody2D bileşeni
     private bool isGrounded; // Karakterin platforma temas edip etmediğini kontrol eder
@@ -24,6 +27,12 @@ public class CharacterMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isGrounded = false; // Zıpladıktan sonra yere temas kontrolü pasif hale gelir
+        }
+
+        // Fare sol tuşuna basıldığında ateş et
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
         }
     }
 
@@ -48,6 +57,19 @@ public class CharacterMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             isGrounded = false;
+        }
+    }
+
+    private void Shoot()
+    {
+        // Mermiyi oluştur
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+        // Mermiye bir hareket ekle
+        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+        if (bulletRb != null)
+        {
+            bulletRb.velocity = firePoint.right * bulletSpeed;
         }
     }
 }
