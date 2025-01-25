@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
     public float jumpForce = 10f; // Zıplama kuvveti
     public Transform groundCheck; //Karakterin ayağı
     public LayerMask groundLayer; //Platformları tanımlamak için
+    public LayerMask bubbleLayer;
     public Transform transform; //Karakterin konum bilgisi
     private Rigidbody2D rb;  // Rigidbody2D bileşeni
     private float moveInput; // Klavyeden gelen giriş değeri
@@ -38,7 +39,16 @@ public class CharacterMovement : MonoBehaviour
 
     private bool isGrounded()//Yerde olup olmadığını kontrol etme
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.23f, groundLayer); 
+        bool returnValue = false;
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.23f, groundLayer) == true)
+        {
+            returnValue = true;
+        } 
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.23f, bubbleLayer) == true)
+        {
+            returnValue = true;
+        }
+        return returnValue;
     }
 
     private void Flip()//Hareketen yönüne dönük
