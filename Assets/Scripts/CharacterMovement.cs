@@ -11,30 +11,44 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb;  // Rigidbody2D bileşeni
     private float moveInput; // Klavyeden gelen giriş değeri
     private float radius; //Karakterin yer kontrolü için yarattığı dairenin yarıçapı
+    private bool pushed;
+    private float pushWaitTime;
+    public int hundredPercent;
     void Start()
     {
+        pushed = false;
+        pushWaitTime = 0.5f;
         transform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        // Klavyeden giriş al ("A/D" veya "Sol/sağ ok tuşları")
-        moveInput = Input.GetAxis("Horizontal");
-
-        // Eğer karakter platformdaysa ve boşluk tuşuna basılmışsa, zıpla
-        if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if (pushed == false)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
-        if (rb.velocity.y > 0f && Input.GetKeyUp(KeyCode.Space))
+             // Klavyeden giriş al ("A/D" veya "Sol/sağ ok tuşları")
+            moveInput = Input.GetAxis("Horizontal");
+
+            // Eğer karakter platformdaysa ve boşluk tuşuna basılmışsa, zıpla
+            if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
+            if (rb.velocity.y > 0f && Input.GetKeyUp(KeyCode.Space))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y*0.5f);
+            }
+            rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y); //Karakterin hızını belirleme
+            Flip();
+        } else if (pushed == true)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y*0.5f);
+            pushWaitTime -= Time.deltaTime;
+            if (pushWaitTime <= 0f)
+            {
+                pushed = false;
+                pushWaitTime = 0.5f;
+            }
         }
-
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y); //Karakterin hızını belirleme
-
-        Flip();
     }
 
     private bool isGrounded()//Yerde olup olmadığını kontrol etme
@@ -73,6 +87,18 @@ public class CharacterMovement : MonoBehaviour
             Vector3 newPoint = groundCheck.position + new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
             Gizmos.DrawLine(prevPoint, newPoint); 
             prevPoint = newPoint; 
+        }
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Bubble" && other.gameObject.GetComponent<Bubble>().waiting == true)
+        {
+            pushed = true;
+            Vector2 direction = (other.gameObject.transform.position - transform.position).normalized;
+            rb.AddForce(direction*-350f);
+            Destroy(other.gameObject.GetComponent<Bubble>().enemyInside);
+            Destroy(other.gameObject);
+            hundredPercent += 1;
         }
     }
 }

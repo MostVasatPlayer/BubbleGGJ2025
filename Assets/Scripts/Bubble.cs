@@ -12,7 +12,7 @@ public class Bubble : MonoBehaviour
     private Transform player; //Oyuncu
     public Transform transform; //Baloncuk
     public Sprite[] sprites;
-    private GameObject enemyInside;
+    public GameObject enemyInside;
     private float timeWait;
     public bool waiting;
     private CircleCollider2D boxCollider;
@@ -54,6 +54,10 @@ public class Bubble : MonoBehaviour
             timeWait -= Time.deltaTime;
             if (timeWait <= 0f)
             {
+                if (enemyInside.name == "Enemy (3)(Clone)")
+                {
+                    enemyInside.GetComponent<EnemyCharRotate>().halfLeft = false;
+                }
                 enemyInside.SetActive(true);
                 enemyInside.GetComponent<Transform>().position = transform.position;
                 Destroy(gameObject);
@@ -69,17 +73,26 @@ public class Bubble : MonoBehaviour
             if (other.gameObject.name == "Enemy(Clone)")
             {
                 img.sprite = sprites[0];
+                enemyInside.SetActive(false);
             } else if (other.gameObject.name == "Enemy (1)(Clone)")
             {
                 img.sprite = sprites[1];
+                enemyInside.SetActive(false);
             } else if  (other.gameObject.name == "Enemy (2)(Clone)")
             {
                 img.sprite = sprites[2];
+                enemyInside.SetActive(false);
             }else if (other.gameObject.name == "Enemy (3)(Clone)")
             {
                 img.sprite = sprites[3];
+                if (enemyInside.GetComponent<EnemyCharRotate>().halfLeft != true)
+                {
+                    enemyInside.GetComponent<EnemyCharRotate>().halfLeft = true;
+                    Destroy(gameObject);
+                } else {
+                    enemyInside.SetActive(false);
+                }
             }
-            enemyInside.SetActive(false);
             waiting = true;
             timeWait = 10f;
         }
