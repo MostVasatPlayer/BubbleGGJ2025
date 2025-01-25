@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class BubbleGun : MonoBehaviour
@@ -7,77 +8,42 @@ public class BubbleGun : MonoBehaviour
     public GameObject singleBubblePrefab; // Tek balon prefab'ı
     public GameObject chargedBubblePrefab; // Şarjlı balon prefab'ı
     public Transform shootPos;
-
+    public float waitTime;
     public float chargeTime = 2f; // Uzun basımda şarj süresi
-    public float shotDelay = 0.5f; // Tek basımda atışlar arasındaki bekleme süresi (delay)
-    public float chargedShotDelay = 0.2f; // Çoklu atıştaki balonlar arasındaki bekleme süresi (delay)
-    public float chargeCooldown = 2f; // Şarjlı atış yapabilmek için bekleme süresi
-
-    private bool canShoot = true; // Tek atış kontrolü
-    private bool isCharging = false; // Şarj kontrolü
-    private bool canChargeShoot = true; // Şarjlı atış yapabilme kontrolü
-    private float chargeTimer = 0f; // Şarj süresi takipçisi
-
+    public float timeWait = 0f;
+    private bool waiting = false;
+    void Start()
+    {
+        timeWait = 0f;
+        waiting = false;
+        waitTime = 2f;    
+    }
     void Update()
     {
+        waitTime -= Time.deltaTime;
         // Tek basımda bir balon atma
-        if (Input.GetKeyDown(KeyCode.E) && canShoot)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && waitTime <= 0f)
         {
-            Instantiate(singleBubblePrefab, shootPos.position, transform.rotation); // Tek balon at
-            StartCoroutine(ShotDelay(shotDelay)); // Gecikme başlat
+            waiting = true;
         }
 
-        // Uzun basımda balon atma
-        if (Input.GetKey(KeyCode.E))
+        if (waiting == true) //Basılma süresi
         {
-            if (!isCharging)
-            {
-                isCharging = true;
-                chargeTimer = 0f; // Şarj süresini sıfırla
-            }
-
-            chargeTimer += Time.deltaTime; // Şarj süresi artıyor
-
-            // Şarj süresi tamamlandığında çoklu balon atmaya başla
-            if (chargeTimer >= chargeTime && canChargeShoot)
-            {
-                StartCoroutine(ShootChargedBubbles()); // Şarjlı balonları ateşle
-                isCharging = false; // Şarj bitti
-                StartCoroutine(ChargeCooldown()); // Şarjlı atış sonrası bekleme süresi
-            }
+            timeWait += Time.deltaTime;
         }
 
         // Tuş bırakıldığında şarj sıfırlanır
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.Mouse0) && waiting == true)
         {
-            isCharging = false;
-            chargeTimer = 0f;
+            if (timeWait >= chargeTime)
+            {
+                Instantiate(chargedBubblePrefab, shootPos.position, transform.rotation);
+            } else {
+                Instantiate(singleBubblePrefab, shootPos.position, transform.rotation); // Tek balon at
+            }
+            waitTime = 2f;
+            waiting = false;
+            timeWait = 0f;
         }
-    }
-
-    // Şarjlı balonları arka arkaya atma fonksiyonu
-    private IEnumerator ShootChargedBubbles()
-    {
-        while (chargeTimer >= chargeTime) // Şarj süresi yeterli ise
-        {
-            Instantiate(chargedBubblePrefab, shootPos.position, transform.rotation);
-            yield return new WaitForSeconds(chargedShotDelay); // Arada bekleme süresi (çoklu atış için)
-        }
-    }
-
-    // Tek basımda atışlar arasındaki gecikme (delay)
-    private IEnumerator ShotDelay(float delay)
-    {
-        canShoot = false; // Tek atış yapılmasını engelle
-        yield return new WaitForSeconds(delay); // Bekleme süresi
-        canShoot = true; // Tek atış yapılabilir hale gelir
-    }
-
-    // Şarjlı atış sonrası bekleme süresi
-    private IEnumerator ChargeCooldown()
-    {
-        canChargeShoot = false; // Şarjlı atış yapılamaz
-        yield return new WaitForSeconds(chargeCooldown); // Bekleme süresi
-        canChargeShoot = true; // Şarjlı atış yapılabilir hale gelir
     }
 }

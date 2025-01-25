@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: deb41cf289f282f49907511a2f897a5d
+guid: 2c8abcb64db9844c2ace7fd6f990b30d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,11 +71,11 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 0
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -84,11 +84,11 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   asepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 0
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
-    defaultPivotAlignment: 0
+    defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638734097153695510
+  platformSettingsDirtyTick: 638734079187625010
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: blue_bacteria
+  - name: yellow_bacteria
     originalName: 
-    pivot: {x: 0.53333336, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 15
-      height: 16
-    spriteID: 443cc0da908a44b4e83e0e30829e3a3a
+      width: 16
+      height: 15
+    spriteID: df0131c99949e44a1bfed86195693ed6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,23 +141,43 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  spriteSheetImportData: []
+  spriteSheetImportData:
+  - name: yellow_bacteria_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 16
+      height: 15
+    spriteID: ea53b926af1bc4af7b10d20e1dca1f47
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: 666093360
-    name: blue_bacteria
+    guid: 1177848836
+    name: yellow_bacteria
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: blue_bacteria
+    - name: yellow_bacteria
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
-        width: 15
-        height: 16
-      spriteId: 443cc0da908a44b4e83e0e30829e3a3a
+        width: 16
+        height: 15
+      spriteId: df0131c99949e44a1bfed86195693ed6
     linkedCells: []
     parentIndex: -1
   platformSettings:

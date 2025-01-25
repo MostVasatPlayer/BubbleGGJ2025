@@ -1,60 +1,49 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
     // Spawnlamak istediğiniz prefab.
-    public GameObject prefab;
-
+    public GameObject[] prefabList;
     // Spawn noktalarını içeren bir dizi.
     public Transform[] spawnPoints;
-
-    // Prefab'ın spawn olma sıklığı (saniye).
-    public float spawnInterval = 2.0f;
-
     // Spawnlama işlemini otomatik başlatmak için bir kontrol.
     public bool autoSpawn = true;
-
-    private float timer;
+    public float timer;
+    void Start()
+    {
+        timer = 5f;
+    }
 
     void Update()
     {
         if (autoSpawn)
         {
             // Zamanlayıcıyı günceller.
-            timer += Time.deltaTime;
+            timer -= Time.deltaTime;
 
             // SpawnInterval süresi geçtiğinde prefab spawnlanır.
-            if (timer >= spawnInterval)
+            if (timer <= 0f)
             {
                 SpawnPrefabAtRandomPoint();
-                timer = 0f;
+                timer = 5f;
             }
         }
     }
 
     void SpawnPrefabAtRandomPoint()
     {
-        if (prefab != null && spawnPoints.Length > 0)
-        {
-            // Rastgele bir spawn noktası seçilir.
-            int randomIndex = Random.Range(0, spawnPoints.Length);
-            Transform selectedPoint = spawnPoints[randomIndex];
+        // Rastgele bir spawn noktası seçilir.
+        int randomIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
+        Transform selectedPoint = spawnPoints[randomIndex];
+        randomIndex = UnityEngine.Random.Range(0, prefabList.Length);
+        GameObject prefab = prefabList[randomIndex];
 
-            // Prefab spawnlanır.
-            Instantiate(prefab, selectedPoint.position, selectedPoint.rotation);
-            Debug.Log($"Prefab spawnlandı! Spawn noktası: {selectedPoint.name}");
-        }
-        else
-        {
-            Debug.LogWarning("Prefab veya spawn noktaları atanmadı!");
-        }
-    }
-
-    // İsteğe bağlı: Spawn işlemini manuel tetiklemek için bir tuş atanabilir.
-    public void ManualSpawn()
-    {
-        SpawnPrefabAtRandomPoint();
+        // Prefab spawnlanır.
+        GameObject character = Instantiate(prefab, selectedPoint.position, selectedPoint.rotation);
+        character.GetComponent<AIDestinationSetter>().target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 }

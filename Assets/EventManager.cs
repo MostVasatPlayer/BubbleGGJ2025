@@ -1,26 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class EventManager : MonoBehaviour
 {
     [Header("Prefab List")]
-    public List<GameObject> prefabList; // Prefab'larınızı buraya ekleyin.
+    public GameObject[] prefabList; // Prefab'larınızı buraya ekleyin.
 
     [Header("Activation Durations")]
-    public float activationDuration = 2f; // Her prefab'ın aktif kalma süresi.
+    public float activationDuration = 10f; // Her prefab'ın aktif kalma süresi.
 
     void Start()
     {
-        if (prefabList.Count > 0)
-        {
-            // Rastgele aktivasyon döngüsünü başlat.
-            StartCoroutine(RandomPrefabActivation());
-        }
-        else
-        {
-            Debug.LogWarning("Prefab listesi boş!");
-        }
+        StartCoroutine(RandomPrefabActivation());
     }
 
     private IEnumerator RandomPrefabActivation()
@@ -28,15 +21,12 @@ public class EventManager : MonoBehaviour
         while (true)
         {
             // Rastgele bir prefab seç.
-            int randomIndex = Random.Range(0, prefabList.Count);
+            int randomIndex = Random.Range(0, prefabList.Length);
 
             // Tüm prefab'ları devre dışı bırak.
-            for (int i = 0; i < prefabList.Count; i++)
+            for (int i = 0; i < prefabList.Length; i++)
             {
-                if (prefabList[i] != null)
-                {
-                    prefabList[i].SetActive(i == randomIndex);
-                }
+                prefabList[i].SetActive(i == randomIndex);
             }
 
             // Süre kadar bekle.

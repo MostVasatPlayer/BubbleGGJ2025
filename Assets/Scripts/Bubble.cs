@@ -7,37 +7,81 @@ public class Bubble : MonoBehaviour
     private float initialX = 25f;
     private float initialY = 3f;
     public Rigidbody2D rb;
-    public GameObject inside;
     private SpriteRenderer img;
     private float ymax;
     private Transform player; //Oyuncu
     public Transform transform; //Baloncuk
+    public Sprite[] sprites;
+    private GameObject enemyInside;
+    private float timeWait;
+    public bool waiting;
+    private CircleCollider2D boxCollider;
     void Start()
     {
-        ymax = 5f;
-        transform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
-        img = inside.GetComponent<SpriteRenderer>();
+        transform = GetComponent<Transform>();
+        img = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<CircleCollider2D>();
+        GameObject[] bubbles = GameObject.FindGameObjectsWithTag("Bubble");
+        foreach (GameObject bubble in bubbles)
+        {
+            Collider2D collider = bubble.GetComponent<CircleCollider2D>();
+            if (collider != null && boxCollider != null)
+            {
+                Physics2D.IgnoreCollision(boxCollider, collider);
+            }
+        }
+        waiting = false;
+        timeWait = 0f;
+        ymax = 5f;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb.velocity = new Vector2(initialX*Mathf.Sign(player.localScale.x), initialY);
     }
     void Update()
     {
-        rb.velocity = new Vector2(rb.velocity.x*0.99f, rb.velocity.y);
+        if (waiting != true)
+        {
+            rb.velocity = new Vector2(rb.velocity.x*0.99f, rb.velocity.y);
+        } else {
+            rb.velocity = new Vector2(rb.velocity.x*0.9f, rb.velocity.y*0.9f);
+        }
         if (transform.position.y >= ymax)
         {
             Destroy(gameObject);
         }
+        if (waiting == true)
+        {
+            timeWait -= Time.deltaTime;
+            if (timeWait <= 0f)
+            {
+                enemyInside.SetActive(true);
+                enemyInside.GetComponent<Transform>().position = transform.position;
+                Destroy(gameObject);
+            }
+        }
     }
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Enemy")
-        {
-            img.sprite = other.gameObject.GetComponent<SpriteRenderer>().sprite;
-            Color fadedColor = img.color;
-            fadedColor.a = 0.5f;
-            img.color = fadedColor;
-            inside.GetComponent<Transform>().localScale *= 0.5f;
+        if (waiting == false && other.gameObject.activeSelf == true && other.gameObject.tag == "Enemy")
+        {   
+            enemyInside = other.gameObject;
+            rb.velocity = new Vector2(0f, 0f);
+            if (other.gameObject.name == "Enemy(Clone)")
+            {
+                img.sprite = sprites[0];
+            } else if (other.gameObject.name == "Enemy (1)(Clone)")
+            {
+                img.sprite = sprites[1];
+            } else if  (other.gameObject.name == "Enemy (2)(Clone)")
+            {
+                img.sprite = sprites[2];
+            }else if (other.gameObject.name == "Enemy (3)(Clone)")
+            {
+                img.sprite = sprites[3];
+            }
+            enemyInside.SetActive(false);
+            waiting = true;
+            timeWait = 10f;
         }
-    }
+    }  
 }

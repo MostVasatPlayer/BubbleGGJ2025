@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: deb41cf289f282f49907511a2f897a5d
+guid: aae5d4c39d3d24510a60cc836fe42a1b
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 16
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -79,7 +79,7 @@ ScriptedImporter:
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
+    generateModelPrefab: 0
     generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
@@ -92,12 +92,12 @@ ScriptedImporter:
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
     spritePadding: 0
-    generateModelPrefab: 1
+    generateModelPrefab: 0
     generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638734097153695510
+  platformSettingsDirtyTick: 638734124079803030
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: blue_bacteria
+  - name: green_bubbled
     originalName: 
-    pivot: {x: 0.53333336, y: 0.5}
+    pivot: {x: 0.5, y: 0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 15
-      height: 16
-    spriteID: 443cc0da908a44b4e83e0e30829e3a3a
+      width: 14
+      height: 14
+    spriteID: 3ebf7c8d86cf14fb586eed80ea41b347
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,20 +144,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 666093360
-    name: blue_bacteria
+    guid: 2075409964
+    name: green_bubbled
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: blue_bacteria
+    - name: green_bubbled
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 15
-        height: 16
-      spriteId: 443cc0da908a44b4e83e0e30829e3a3a
+        x: 1
+        y: 1
+        width: 14
+        height: 14
+      spriteId: 3ebf7c8d86cf14fb586eed80ea41b347
     linkedCells: []
     parentIndex: -1
   platformSettings:
