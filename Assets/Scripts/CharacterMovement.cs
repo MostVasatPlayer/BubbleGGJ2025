@@ -4,16 +4,15 @@ public class CharacterMovement : MonoBehaviour
 {
     public float moveSpeed = 5f; // Karakterin hareket hızı
     public float jumpForce = 10f; // Zıplama kuvveti
-    public Transform firePoint; // Merminin çıkış noktası
-    public GameObject bulletPrefab; // Ateş etmek istediğimiz obje (ör. mermi)
-    public float bulletSpeed = 10f; // Merminin hızı
-
+    public Transform groundCheck; //Karakterin ayağı
+    public LayerMask groundLayer; //Platformları tanımlamak için
+    public Transform transform; //Karakterin konum bilgisi
     private Rigidbody2D rb;  // Rigidbody2D bileşeni
-    private bool isGrounded; // Karakterin platforma temas edip etmediğini kontrol eder
     private float moveInput; // Klavyeden gelen giriş değeri
-
+    private float radius; //Karakterin yer kontrolü için yarattığı dairenin yarıçapı
     void Start()
     {
+        transform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -23,53 +22,47 @@ public class CharacterMovement : MonoBehaviour
         moveInput = Input.GetAxis("Horizontal");
 
         // Eğer karakter platformdaysa ve boşluk tuşuna basılmışsa, zıpla
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            isGrounded = false; // Zıpladıktan sonra yere temas kontrolü pasif hale gelir
+        }
+        if (rb.velocity.y > 0f && Input.GetKeyUp(KeyCode.Space))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y*0.5f);
         }
 
-        // Fare sol tuşuna basıldığında ateş et
-        if (Input.GetMouseButtonDown(0))
+        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y); //Karakterin hızını belirleme
+
+        Flip();
+    }
+
+    private bool isGrounded()//Yerde olup olmadığını kontrol etme
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.23f, groundLayer); 
+    }
+
+    private void Flip()//Hareketen yönüne dönük
+    {
+        if (rb.velocity.x < 0f)
         {
-            Shoot();
+            transform.localScale = new Vector3(-1, 1, 1); 
+        } else if (rb.velocity.x > 0f)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
         }
     }
-
-    void FixedUpdate()
+    void OnDrawGizmos() //Debug için çizim
     {
-        // Karakteri hareket ettir
-        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Eğer temas edilen nesne "Platform" etiketi taşıyorsa, isGrounded'ı true yap
-        if (collision.gameObject.CompareTag("Platform"))
+        Gizmos.color = Color.green; 
+        int segments = 100; 
+        float angleStep = 360f / segments;
+        Vector3 prevPoint = groundCheck.position + new Vector3(radius, 0, 0);
+        for (int i = 1; i <= segments; i++)
         {
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        // Platformdan ayrıldığında isGrounded'ı false yap
-        if (collision.gameObject.CompareTag("Platform"))
-        {
-            isGrounded = false;
-        }
-    }
-
-    private void Shoot()
-    {
-        // Mermiyi oluştur
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
-        // Mermiye bir hareket ekle
-        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-        if (bulletRb != null)
-        {
-            bulletRb.velocity = firePoint.right * bulletSpeed;
+            float angle = i * angleStep * Mathf.Deg2Rad;
+            Vector3 newPoint = groundCheck.position + new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
+            Gizmos.DrawLine(prevPoint, newPoint); 
+            prevPoint = newPoint; 
         }
     }
 }
