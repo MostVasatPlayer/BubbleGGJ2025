@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // Sahne yönetimi için gerekli
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
     private void HandleDeath()
     {
         // Ölüm durumunda yapılacak işlemler
-        Debug.Log("Game Over! Restart or show death screen.");
+        Debug.Log("Game Over! Restarting...");
+        SceneManager.LoadScene("Restart"); // "Restart" adlı sahneye geçiş yap
     }
 }
