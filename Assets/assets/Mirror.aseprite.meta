@@ -130,7 +130,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 128
+      width: 102
       height: 64
     spriteID: 95e2c183c0b78ad47a9e9bebf564e594
     spriteBone: []
@@ -153,9 +153,9 @@ ScriptedImporter:
     - name: Mirror
       frameIndex: 0
       cellRect:
-        x: 0
+        x: 13
         y: 0
-        width: 128
+        width: 102
         height: 64
       spriteId: 95e2c183c0b78ad47a9e9bebf564e594
     linkedCells: []
