@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections; // Coroutine kullanmak için bu namespace gereklidir
 
 public class WinScreenBubbleController : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class WinScreenBubbleController : MonoBehaviour
     private Vector3 startPosition;
     private bool isPopped = false; // Baloncuk patladı mı kontrolü
     private float timeElapsed = 0f; // Hareket için zaman sayacı
+
+    // Yok olma süresi
+    public float additionalDestroyTime = 0f; // Animasyon sonrası ekstra bekleme süresi
 
     void Start()
     {
@@ -66,8 +70,20 @@ public class WinScreenBubbleController : MonoBehaviour
         }
 
         // Animasyon süresi kadar bekle ve baloncuğu yok et
+        StartCoroutine(DestroyAfterAnimation());
+    }
+
+    // Animasyon bittiğinde baloncuğu yok et
+    private IEnumerator DestroyAfterAnimation()
+    {
+        // Animasyon süresini al
         float animationDuration = GetAnimationDuration("Pop");
-        Destroy(gameObject, animationDuration);
+
+        // Animasyon süresi kadar bekle ve ek olarak eklenen bekleme süresini de göz önünde bulundur
+        yield return new WaitForSeconds(animationDuration + additionalDestroyTime);
+
+        // Baloncuğu yok et
+        Destroy(gameObject);
     }
 
     // Belirli bir animasyonun süresini hesaplar

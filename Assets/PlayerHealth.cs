@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
             Destroy(collision.gameObject);
             if (currentHealth <= 0)
             {
-                SceneManager.LoadScene("Restart", LoadSceneMode.Single);
+                SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
             }
         }
     }
