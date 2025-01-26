@@ -12,6 +12,7 @@ public class Pop : MonoBehaviour
     private float waitTime;
     void Start()
     {
+        
         waitTime = 0.5f;
         isPushed = false;
         rb = GetComponent<Rigidbody2D>();
@@ -37,9 +38,22 @@ public class Pop : MonoBehaviour
             isPushed = true;
             Vector2 direction = (other.gameObject.transform.position - transform.position).normalized;
             rb.AddForce(direction*-2f);
-            Destroy(other.gameObject.GetComponent<Bubble>().enemyInside);
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<Animator>().enabled = true;
+            other.gameObject.GetComponent<Animator>().SetTrigger("Pop");
+            Destroy(other.gameObject.GetComponent<Bubble>().enemyInside, 2f);
             hundredPercent += 1;
         }
     }
+    private float GetAnimationDuration(Animator animator, string animationName)
+    {
+        if (animator == null || animator.runtimeAnimatorController == null) {return 0f;}
+        foreach (var clip in animator.runtimeAnimatorController.animationClips)
+        {
+            if (clip.name == animationName)
+            {
+                return clip.length;
+            }
+        }
+        return 0f;
+    } 
 }

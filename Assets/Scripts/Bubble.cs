@@ -17,8 +17,11 @@ public class Bubble : MonoBehaviour
     private float timeWait;
     public bool waiting;
     private CircleCollider2D boxCollider;
+    public Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
+        animator.enabled = false;
         rb = GetComponent<Rigidbody2D>();
         transform = GetComponent<Transform>();
         img = GetComponent<SpriteRenderer>();
@@ -32,6 +35,7 @@ public class Bubble : MonoBehaviour
                 Physics2D.IgnoreCollision(boxCollider, collider);
             }
         }
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Ground"), LayerMask.NameToLayer("Bubble"), true);
         waiting = false;
         timeWait = 0f;
         ymax = 5f;
@@ -80,6 +84,7 @@ public class Bubble : MonoBehaviour
         {   
             bool goingToBeActive = false;
             enemyInside = other.gameObject;
+            timeWait = 10f;
             rb.velocity = new Vector2(0f, 0f);
             if (other.gameObject.name == "Enemy(Clone)")
             {
@@ -87,6 +92,7 @@ public class Bubble : MonoBehaviour
             } else if (other.gameObject.name == "Enemy (1)(Clone)")
             {
                 img.sprite = sprites[1];
+                timeWait = 5f;
             } else if  (other.gameObject.name == "Enemy (2)(Clone)")
             {
                 img.sprite = sprites[2];
@@ -102,7 +108,6 @@ public class Bubble : MonoBehaviour
             }
             enemyInside.SetActive(goingToBeActive);
             waiting = true;
-            timeWait = 10f;
         }
-    }  
+    } 
 }

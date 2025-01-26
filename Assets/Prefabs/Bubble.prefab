@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1204506774454478340}
   - component: {fileID: 9170185359928983139}
   - component: {fileID: 3616365195123607644}
+  - component: {fileID: 5144226722064337126}
   m_Layer: 6
   m_Name: Bubble
   m_TagString: Bubble
@@ -106,7 +107,9 @@ MonoBehaviour:
   - {fileID: 8172371441585889576, guid: aae5d4c39d3d24510a60cc836fe42a1b, type: 3}
   - {fileID: -4642229481610711040, guid: 12b941e536b99405ba9b49c6e0c68d90, type: 3}
   - {fileID: 2768652646640064308, guid: 92f5e86dd7795451189668375dc9c44e, type: 3}
+  enemyInside: {fileID: 0}
   waiting: 0
+  animator: {fileID: 0}
 --- !u!50 &9170185359928983139
 Rigidbody2D:
   serializedVersion: 4
@@ -169,3 +172,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.21875
+--- !u!95 &5144226722064337126
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3723906242985380509}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62cf4eae3b09d47f58b099fc2c61af14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

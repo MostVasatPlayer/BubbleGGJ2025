@@ -105,7 +105,9 @@ public class CharacterMovement : MonoBehaviour
             Vector2 direction = (other.gameObject.transform.position - transform.position).normalized;
             rb.AddForce(direction*-350f);
             Destroy(other.gameObject.GetComponent<Bubble>().enemyInside);
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<Animator>().enabled = true;
+            other.gameObject.GetComponent<Animator>().SetTrigger("Pop");
+            Destroy(other.gameObject, 0.2f);
             hundredPercent += 1;
         }
     }

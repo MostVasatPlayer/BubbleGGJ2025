@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     public float timer;
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Ground"), LayerMask.NameToLayer("Enemy"), true);
         timer = 5f;
     }
 
