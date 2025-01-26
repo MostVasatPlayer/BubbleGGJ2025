@@ -12,8 +12,10 @@ public class BubbleGun : MonoBehaviour
     public float chargeTime = 2f; // Uzun basımda şarj süresi
     public float timeWait = 0f;
     private bool waiting = false;
+    private Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
         timeWait = 0f;
         waiting = false;
         waitTime = 2f;    
@@ -37,8 +39,10 @@ public class BubbleGun : MonoBehaviour
         {
             if (timeWait >= chargeTime)
             {
+                animator.SetTrigger("Fire");
                 Instantiate(chargedBubblePrefab, shootPos.position, transform.rotation);
             } else {
+                animator.SetTrigger("Fire");
                 Instantiate(singleBubblePrefab, shootPos.position, transform.rotation); // Tek balon at
             }
             waitTime = 2f;

@@ -1843,6 +1843,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 1.625}
   m_EdgeRadius: 0
+--- !u!95 &1724173024
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244975307}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd0c75977c0f14ae5b05061a10754968, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1909354476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,7 +2040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6040420686558560686, guid: 9bb5e89f0f819ff4ea2b654b0dfc1684, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.89
+      value: -2.51
       objectReference: {fileID: 0}
     - target: {fileID: 6040420686558560686, guid: 9bb5e89f0f819ff4ea2b654b0dfc1684, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2098,6 +2119,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6790891762072758731, guid: 9bb5e89f0f819ff4ea2b654b0dfc1684, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1724173023}
+    - targetCorrespondingSourceObject: {fileID: 6790891762072758731, guid: 9bb5e89f0f819ff4ea2b654b0dfc1684, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1724173024}
   m_SourcePrefab: {fileID: 100100000, guid: 9bb5e89f0f819ff4ea2b654b0dfc1684, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
