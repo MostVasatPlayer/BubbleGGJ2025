@@ -61,6 +61,7 @@ public class WinScreenBubbleController : MonoBehaviour
         // Animasyonu tetikle
         if (animator != null)
         {
+            // Animator'deki 'Pop' animasyonunu tetikle
             animator.SetTrigger("Pop");
         }
 
