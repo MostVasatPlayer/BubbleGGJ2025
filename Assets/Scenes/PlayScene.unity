@@ -2989,6 +2989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarAnimator: {fileID: 116826912}
+  damagedAnimator: {fileID: 816317337}
   ink: {fileID: 2075042155}
 --- !u!114 &816317340
 MonoBehaviour:
