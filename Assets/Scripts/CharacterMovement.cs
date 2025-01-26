@@ -1,4 +1,6 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -14,12 +16,14 @@ public class CharacterMovement : MonoBehaviour
     private bool pushed;
     private float pushWaitTime;
     public int hundredPercent;
+    public UnityEngine.UI.Image img;
     void Start()
     {
         pushed = false;
         pushWaitTime = 0.5f;
         transform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        img.fillAmount = hundredPercent/100;
     }
 
     void Update()
@@ -49,6 +53,8 @@ public class CharacterMovement : MonoBehaviour
                 pushWaitTime = 0.5f;
             }
         }
+        img.fillAmount = (float)hundredPercent/100f;
+        Debug.Log(img.fillAmount);
     }
 
     private bool isGrounded()//Yerde olup olmadığını kontrol etme

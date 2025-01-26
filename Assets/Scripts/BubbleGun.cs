@@ -22,7 +22,7 @@ public class BubbleGun : MonoBehaviour
     {
         waitTime -= Time.deltaTime;
         // Tek basımda bir balon atma
-        if (Input.GetKeyDown(KeyCode.Mouse0) && waitTime <= 0f)
+        if (Input.GetKeyDown(KeyCode.E))
         {
             waiting = true;
         }
@@ -33,7 +33,7 @@ public class BubbleGun : MonoBehaviour
         }
 
         // Tuş bırakıldığında şarj sıfırlanır
-        if (Input.GetKeyUp(KeyCode.Mouse0) && waiting == true)
+        if (Input.GetKeyUp(KeyCode.E) && waiting == true && waitTime <= 0f)
         {
             if (timeWait >= chargeTime)
             {

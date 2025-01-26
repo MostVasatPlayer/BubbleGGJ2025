@@ -44,6 +44,11 @@ public class EnemySpawner : MonoBehaviour
 
         // Prefab spawnlanır.
         GameObject character = Instantiate(prefab, selectedPoint.position, selectedPoint.rotation);
-        character.GetComponent<AIDestinationSetter>().target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        if (character.name == "Enemy(Clone)")
+        {
+            character.GetComponent<EnemyShrimp>().player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        } else {
+            character.GetComponent<AIDestinationSetter>().target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        }
     }
 }
