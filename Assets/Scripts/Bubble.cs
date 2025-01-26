@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -57,6 +58,15 @@ public class Bubble : MonoBehaviour
                 if (enemyInside.name == "Enemy (3)(Clone)")
                 {
                     enemyInside.GetComponent<EnemyCharRotate>().halfLeft = false;
+                } else if (enemyInside.name == "Enemy(Clone)")
+                {
+                    float angle = UnityEngine.Random.Range(0 , Mathf.PI);
+                    float distance = UnityEngine.Random.Range(0, 1f);
+                    Vector2 offset = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle))*distance;
+                    Vector2 pos = offset + (Vector2)transform.position;
+                    GameObject newObj = Instantiate(enemyInside, pos, transform.rotation);
+                    newObj.SetActive(true);
+                    newObj.name = "Enemy(Clone)";
                 }
                 enemyInside.SetActive(true);
                 enemyInside.GetComponent<Transform>().position = transform.position;
@@ -68,31 +78,29 @@ public class Bubble : MonoBehaviour
     {
         if (waiting == false && other.gameObject.activeSelf == true && other.gameObject.tag == "Enemy")
         {   
+            bool goingToBeActive = false;
             enemyInside = other.gameObject;
             rb.velocity = new Vector2(0f, 0f);
             if (other.gameObject.name == "Enemy(Clone)")
             {
                 img.sprite = sprites[0];
-                enemyInside.SetActive(false);
             } else if (other.gameObject.name == "Enemy (1)(Clone)")
             {
                 img.sprite = sprites[1];
-                enemyInside.SetActive(false);
             } else if  (other.gameObject.name == "Enemy (2)(Clone)")
             {
                 img.sprite = sprites[2];
-                enemyInside.SetActive(false);
             }else if (other.gameObject.name == "Enemy (3)(Clone)")
             {
                 img.sprite = sprites[3];
                 if (enemyInside.GetComponent<EnemyCharRotate>().halfLeft != true)
                 {
+                    goingToBeActive = true;
                     enemyInside.GetComponent<EnemyCharRotate>().halfLeft = true;
                     Destroy(gameObject);
-                } else {
-                    enemyInside.SetActive(false);
                 }
             }
+            enemyInside.SetActive(goingToBeActive);
             waiting = true;
             timeWait = 10f;
         }
