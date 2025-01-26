@@ -7,7 +7,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     // Spawnlamak istediğiniz prefab.
-    public GameObject[] prefabList;
+    public GameObject prefab;
     // Spawn noktalarını içeren bir dizi.
     public Transform[] spawnPoints;
     // Spawnlama işlemini otomatik başlatmak için bir kontrol.
@@ -40,8 +40,6 @@ public class EnemySpawner : MonoBehaviour
         // Rastgele bir spawn noktası seçilir.
         int randomIndex = UnityEngine.Random.Range(0, spawnPoints.Length);
         Transform selectedPoint = spawnPoints[randomIndex];
-        randomIndex = UnityEngine.Random.Range(0, prefabList.Length);
-        GameObject prefab = prefabList[randomIndex];
 
         // Prefab spawnlanır.
         GameObject character = Instantiate(prefab, selectedPoint.position, selectedPoint.rotation);

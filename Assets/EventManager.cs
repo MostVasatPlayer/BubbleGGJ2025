@@ -9,10 +9,11 @@ public class EventManager : MonoBehaviour
     public GameObject[] prefabList; // Prefab'larınızı buraya ekleyin.
 
     [Header("Activation Durations")]
-    public float activationDuration = 10f; // Her prefab'ın aktif kalma süresi.
+    public float activationDuration = 20f; // Her prefab'ın aktif kalma süresi.
 
     void Start()
     {
+        activationDuration = 20f;
         StartCoroutine(RandomPrefabActivation());
     }
 
@@ -27,6 +28,21 @@ public class EventManager : MonoBehaviour
             for (int i = 0; i < prefabList.Length; i++)
             {
                 prefabList[i].SetActive(i == randomIndex);
+                if (prefabList[i].name == "HandWc")
+                {
+                    prefabList[i].GetComponent<EnemySpawner>().timer = 0.3f;
+                } else if (prefabList[i].name == "HandRail")
+                {   
+                    prefabList[i].GetComponent<EnemySpawner>().timer = 0.2f;
+                }
+                else if (prefabList[i].name == "HandGGJ2025")
+                {   
+                    prefabList[i].GetComponent<EnemySpawner>().timer = 0.1f;
+                } 
+                else if (prefabList[i].name == "HandHotDog")
+                {   
+                    prefabList[i].GetComponent<EnemySpawner>().timer = 0.1f;
+                }
             }
 
             // Süre kadar bekle.

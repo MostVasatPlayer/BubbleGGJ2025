@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement; // Sahne yönetimi için gerekli
 public class PlayerHealth : MonoBehaviour
 {
     public Animator healthBarAnimator; // Can barı animatörü
-    private int currentHealth = 5;     // Başlangıç sağlığı
+    private int currentHealth = 4;     // Başlangıç sağlığı
     public GameObject ink;
     private void OnCollisionEnter2D(Collision2D collision)
     {

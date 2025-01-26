@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharacterMovement : MonoBehaviour
@@ -54,9 +55,14 @@ public class CharacterMovement : MonoBehaviour
                 pushWaitTime = 0.5f;
             }
         }
-        img.fillAmount = (float)hundredPercent/100f;
         animator.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));
         animator.SetFloat("velocityY", rb.velocity.y);
+        if (hundredPercent >= 100)
+        {
+            SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
+        } else {
+            img.fillAmount = (float)hundredPercent/100f;
+        }
     }
 
     private bool isGrounded()//Yerde olup olmadığını kontrol etme
@@ -103,12 +109,12 @@ public class CharacterMovement : MonoBehaviour
         {
             pushed = true;
             Vector2 direction = (other.gameObject.transform.position - transform.position).normalized;
-            rb.AddForce(direction*-350f);
+            rb.AddForce(direction*-200f);
             Destroy(other.gameObject.GetComponent<Bubble>().enemyInside);
             other.gameObject.GetComponent<Animator>().enabled = true;
             other.gameObject.GetComponent<Animator>().SetTrigger("Pop");
             Destroy(other.gameObject, 0.2f);
-            hundredPercent += 1;
+            hundredPercent += 5;
         }
     }
 }

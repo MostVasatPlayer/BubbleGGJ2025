@@ -24,7 +24,7 @@ public class PlayerShield : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && coolDown <= 0f)
         {
             isOpen = true;
-            coolDown = 6f;
+            coolDown = 15f;
             GameObject newShield = Instantiate(shield, transform.position, transform.rotation);
             newShield.GetComponent<BubbleShield>().player = gameObject;
         }

@@ -92,10 +92,10 @@ public class Bubble : MonoBehaviour
             } else if (other.gameObject.name == "Enemy (1)(Clone)")
             {
                 img.sprite = sprites[1];
-                timeWait = 5f;
             } else if  (other.gameObject.name == "Enemy (2)(Clone)")
             {
                 img.sprite = sprites[2];
+                timeWait = 5f;
             }else if (other.gameObject.name == "Enemy (3)(Clone)")
             {
                 img.sprite = sprites[3];

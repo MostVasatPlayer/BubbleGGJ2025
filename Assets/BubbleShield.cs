@@ -35,6 +35,7 @@ public class BubbleShield : MonoBehaviour
                 other.gameObject.GetComponent<Rigidbody2D>().AddForce((other.gameObject.transform.position - transform.position)*5f, ForceMode2D.Impulse);
                 other.gameObject.GetComponent<EnemyCharRotate>().halfLeft = true;
             } else {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>().hundredPercent += 5;
                 Destroy(other.gameObject);
             }
         }
