@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d506bb168073848fab658d124d10dc61
+guid: 246ba8b1adfec7044ae5e1c8d7e37edf
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 16
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638734899696004174
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,78 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: bubble_popping_Frame_0
+  - name: yellow_bacteria_damaged_anim_Frame_0
     originalName: 
-    pivot: {x: 0.5555556, y: -0.5714286}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 26
-      y: 4
-      width: 9
-      height: 7
-    spriteID: ae5207c062614416c93e1aec13e5de0a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 26, y: 4}
-  - name: bubble_popping_Frame_1
-    originalName: 
-    pivot: {x: 0.5555556, y: -0.3}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 46
-      width: 9
-      height: 10
-    spriteID: c2172147c85b7448daa528d5d1776f19
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 46}
-  - name: bubble_popping_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: -0.16666667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 26
-      width: 14
-      height: 12
-    spriteID: 1fbb153365d6f455b8537796fc62e0fc
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 26}
-  - name: bubble_popping_Frame_3
-    originalName: 
-    pivot: {x: 0.5, y: -0.071428575}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 14
-      height: 14
-    spriteID: 071fa4d5c354e4486a6f32aee4b748a3
+      width: 16
+      height: 16
+    spriteID: 949d5afaf5d4de540bc029655b3a915b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -201,86 +141,138 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: yellow_bacteria_damaged_anim_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 28
+      width: 16
+      height: 16
+    spriteID: 254f662251303f3419bbd11717b6d964
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 28}
+  - name: yellow_bacteria_damaged_anim_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 52
+      width: 16
+      height: 16
+    spriteID: debb3072a751cc1409ad56070131e045
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 52}
+  - name: yellow_bacteria_damaged_anim_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 76
+      width: 16
+      height: 16
+    spriteID: 76950fc20a3143843a503204671edcf4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 76}
+  - name: yellow_bacteria_damaged_anim_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 100
+      width: 16
+      height: 16
+    spriteID: 351c769fe15fda045b2dd0157baf5d32
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 100}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 911985268
-    name: bubble_popping
+    guid: 1782213060
+    name: yellow_bacteria_damaged_anim
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bubble_popping_Frame_0
+    - name: yellow_bacteria_damaged_anim_Frame_0
       frameIndex: 0
       cellRect:
-        x: 3
-        y: 4
-        width: 9
-        height: 7
-      spriteId: ae5207c062614416c93e1aec13e5de0a
-    - name: bubble_popping_Frame_1
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 949d5afaf5d4de540bc029655b3a915b
+    - name: yellow_bacteria_damaged_anim_Frame_1
       frameIndex: 1
       cellRect:
-        x: 3
-        y: 3
-        width: 9
-        height: 10
-      spriteId: c2172147c85b7448daa528d5d1776f19
-    - name: bubble_popping_Frame_2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 254f662251303f3419bbd11717b6d964
+    - name: yellow_bacteria_damaged_anim_Frame_2
       frameIndex: 2
       cellRect:
-        x: 1
-        y: 2
-        width: 14
-        height: 12
-      spriteId: 1fbb153365d6f455b8537796fc62e0fc
-    - name: bubble_popping_Frame_3
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: debb3072a751cc1409ad56070131e045
+    - name: yellow_bacteria_damaged_anim_Frame_3
       frameIndex: 3
       cellRect:
-        x: 1
-        y: 1
-        width: 14
-        height: 14
-      spriteId: 071fa4d5c354e4486a6f32aee4b748a3
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 76950fc20a3143843a503204671edcf4
+    - name: yellow_bacteria_damaged_anim_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      spriteId: 351c769fe15fda045b2dd0157baf5d32
     linkedCells: []
     parentIndex: -1
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Server
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
