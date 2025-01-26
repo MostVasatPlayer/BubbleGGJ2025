@@ -38,6 +38,7 @@ public class CharacterMovement : MonoBehaviour
             // Eğer karakter platformdaysa ve boşluk tuşuna basılmışsa, zıpla
             if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
             {
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioManager>().PlaySound("Jump");
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
             if (rb.velocity.y > 0f && Input.GetKeyUp(KeyCode.Space))
@@ -113,6 +114,7 @@ public class CharacterMovement : MonoBehaviour
             Destroy(other.gameObject.GetComponent<Bubble>().enemyInside);
             other.gameObject.GetComponent<Animator>().enabled = true;
             other.gameObject.GetComponent<Animator>().SetTrigger("Pop");
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioManager>().PlaySound("Popping");
             Destroy(other.gameObject, 0.2f);
             hundredPercent += 5;
         }

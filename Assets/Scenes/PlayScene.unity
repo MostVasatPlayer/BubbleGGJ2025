@@ -2060,7 +2060,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -7562316615227469169, guid: 9888ff24ce47044ce8a95bfeb968ef0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3010,6 +3010,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: bb3148ec4c4764eeb8e050ed30e4d3af, type: 3}
   m_PrefabInstance: {fileID: 1713171002}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &825312291
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2253911629886400664, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_Name
+      value: background
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -99
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 11.069505
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.419735
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.857818
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.789
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878350319992209165, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: -8435245712485981826, guid: 328b603d7c62841fa94f50eb62cb6f8a, type: 3}
 --- !u!4 &833887333 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 5d291811a84bf444687b25cbde7c8ef0, type: 3}
@@ -4438,7 +4511,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -7562316615227469169, guid: 9888ff24ce47044ce8a95bfeb968ef0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4530,6 +4603,7 @@ GameObject:
   - component: {fileID: 1269229436}
   - component: {fileID: 1269229435}
   - component: {fileID: 1269229438}
+  - component: {fileID: 1269229439}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4655,6 +4729,67 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1269229439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269229434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecc677749fc5e476ba4fe15a64657b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Jump
+    clip: {fileID: 8300000, guid: 337d79b5c96f342d292d2da23e038a92, type: 3}
+    volume: 0.5
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Create
+    clip: {fileID: 8300000, guid: 1779685d0b3a6419daf2718a72ef9b49, type: 3}
+    volume: 0.5
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Absorb
+    clip: {fileID: 8300000, guid: 8cc3fb92cbb664ae482a5af5d43e91c7, type: 3}
+    volume: 0.5
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Popping
+    clip: {fileID: 8300000, guid: 2ef5d2300971e4268bcfdb1a412eec63, type: 3}
+    volume: 0.5
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Toilet
+    clip: {fileID: 8300000, guid: bca6dc408620041f9bfde981078d68c7, type: 3}
+    volume: 0.25
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Train
+    clip: {fileID: 8300000, guid: 6c6938ab6145146eeacde8fd0425d4d4, type: 3}
+    volume: 0.25
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Keyboard
+    clip: {fileID: 8300000, guid: 201348828cebd4d3daf83821f4b56429, type: 3}
+    volume: 0.25
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Eat
+    clip: {fileID: 8300000, guid: dc0cdad1805d6454cb25fe762f15ac00, type: 3}
+    volume: 0.25
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
 --- !u!1001 &1275676862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5077,7 +5212,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -7562316615227469169, guid: 9888ff24ce47044ce8a95bfeb968ef0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7304,3 +7439,4 @@ SceneRoots:
   - {fileID: 628849346}
   - {fileID: 183982988}
   - {fileID: 1591049638}
+  - {fileID: 825312291}

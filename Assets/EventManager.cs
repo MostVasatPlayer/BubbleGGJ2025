@@ -23,25 +23,35 @@ public class EventManager : MonoBehaviour
         {
             // Rastgele bir prefab seç.
             int randomIndex = Random.Range(0, prefabList.Length);
+            Debug.Log(randomIndex);
 
             // Tüm prefab'ları devre dışı bırak.
             for (int i = 0; i < prefabList.Length; i++)
             {
-                prefabList[i].SetActive(i == randomIndex);
-                if (prefabList[i].name == "HandWc")
+                if (i == randomIndex)
                 {
-                    prefabList[i].GetComponent<EnemySpawner>().timer = 0.3f;
-                } else if (prefabList[i].name == "HandRail")
-                {   
-                    prefabList[i].GetComponent<EnemySpawner>().timer = 0.2f;
-                }
-                else if (prefabList[i].name == "HandGGJ2025")
-                {   
-                    prefabList[i].GetComponent<EnemySpawner>().timer = 0.1f;
-                } 
-                else if (prefabList[i].name == "HandHotDog")
-                {   
-                    prefabList[i].GetComponent<EnemySpawner>().timer = 0.1f;
+                    prefabList[i].SetActive(i == randomIndex);
+                    if (prefabList[i].name == "HandWc")
+                    {
+                        prefabList[i].GetComponent<EnemySpawner>().timer = 0.3f;
+                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioManager>().PlaySound("Toilet");
+                    } else if (prefabList[i].name == "HandRail")
+                    {   
+                        prefabList[i].GetComponent<EnemySpawner>().timer = 0.2f;
+                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioManager>().PlaySound("Train");
+                    }
+                    else if (prefabList[i].name == "HandGGJ2025")
+                    {   
+                        prefabList[i].GetComponent<EnemySpawner>().timer = 0.1f;
+                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioManager>().PlaySound("Keyboard");
+                    } 
+                    else if (prefabList[i].name == "HandHotDog")
+                    {   
+                        prefabList[i].GetComponent<EnemySpawner>().timer = 0.1f;
+                        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioManager>().PlaySound("Eat");
+                    }
+                } else {
+                    prefabList[i].SetActive(false);
                 }
             }
 

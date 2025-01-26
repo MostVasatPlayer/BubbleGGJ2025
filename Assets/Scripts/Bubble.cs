@@ -89,13 +89,16 @@ public class Bubble : MonoBehaviour
             if (other.gameObject.name == "Enemy(Clone)")
             {
                 img.sprite = sprites[0];
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioManager>().PlaySound("Absorb");
             } else if (other.gameObject.name == "Enemy (1)(Clone)")
             {
                 img.sprite = sprites[1];
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioManager>().PlaySound("Absorb");
             } else if  (other.gameObject.name == "Enemy (2)(Clone)")
             {
                 img.sprite = sprites[2];
                 timeWait = 5f;
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioManager>().PlaySound("Absorb");
             }else if (other.gameObject.name == "Enemy (3)(Clone)")
             {
                 img.sprite = sprites[3];

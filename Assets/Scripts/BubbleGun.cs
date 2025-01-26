@@ -40,9 +40,11 @@ public class BubbleGun : MonoBehaviour
             if (timeWait >= chargeTime)
             {
                 animator.SetTrigger("Fire");
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioManager>().PlaySound("Create");
                 Instantiate(chargedBubblePrefab, shootPos.position, transform.rotation);
             } else {
                 animator.SetTrigger("Fire");
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioManager>().PlaySound("Create");
                 Instantiate(singleBubblePrefab, shootPos.position, transform.rotation); // Tek balon at
             }
             waitTime = 2f;

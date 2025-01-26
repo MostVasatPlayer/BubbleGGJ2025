@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
             // Sağlık sıfır veya daha düşükse "WinScene" sahnesine geçiş yap
             if (currentHealth <= 0)
             {
-                SceneManager.LoadScene("WinScene", LoadSceneMode.Single);
+                SceneManager.LoadScene("RestatScene", LoadSceneMode.Single);
             }
         }
     }
