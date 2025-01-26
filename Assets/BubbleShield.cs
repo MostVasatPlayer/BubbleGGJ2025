@@ -32,6 +32,7 @@ public class BubbleShield : MonoBehaviour
         {
             if (other.gameObject.name == "Enemy (3)(Clone)" && other.gameObject.GetComponent<EnemyCharRotate>().halfLeft == false)
             {
+                other.gameObject.GetComponent<Rigidbody2D>().Addforce((other.gameObject.transform.position - transform.position)*5f, ForceMode2D.Impulse)
                 other.gameObject.GetComponent<EnemyCharRotate>().halfLeft = true;
             } else {
                 Destroy(other.gameObject);
