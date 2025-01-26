@@ -8,6 +8,10 @@ public class PlayerHealth : MonoBehaviour
     public Animator damagedAnimator;   // "Damaged" animasyonunu oynatan animatör
 
     public GameObject ink;
+    void Start()
+    {
+        damagedAnimator = GetComponent<Animator>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
