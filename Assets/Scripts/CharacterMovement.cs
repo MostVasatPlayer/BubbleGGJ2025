@@ -1,4 +1,3 @@
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,10 +14,12 @@ public class CharacterMovement : MonoBehaviour
     private float radius; //Karakterin yer kontrolü için yarattığı dairenin yarıçapı
     private bool pushed;
     private float pushWaitTime;
-    public int hundredPercent;
+    public int hundredPercent; 
     public UnityEngine.UI.Image img;
+    private Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
         pushed = false;
         pushWaitTime = 0.5f;
         transform = GetComponent<Transform>();
@@ -54,7 +55,8 @@ public class CharacterMovement : MonoBehaviour
             }
         }
         img.fillAmount = (float)hundredPercent/100f;
-        Debug.Log(img.fillAmount);
+        animator.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("velocityY", rb.velocity.y);
     }
 
     private bool isGrounded()//Yerde olup olmadığını kontrol etme
