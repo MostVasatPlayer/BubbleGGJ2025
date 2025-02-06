@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -204,38 +205,42 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 911985268
+    guid: 153756996
     name: bubble_popping
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bubble_popping_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 4
         width: 9
         height: 7
       spriteId: ae5207c062614416c93e1aec13e5de0a
-    - name: bubble_popping_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 3
         width: 9
         height: 10
       spriteId: c2172147c85b7448daa528d5d1776f19
-    - name: bubble_popping_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 2
         width: 14
         height: 12
       spriteId: 1fbb153365d6f455b8537796fc62e0fc
-    - name: bubble_popping_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 1
@@ -297,3 +302,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 16, y: 16}
+  previousTextureSize: {x: 64, y: 64}

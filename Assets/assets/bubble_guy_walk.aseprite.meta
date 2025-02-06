@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -244,30 +245,33 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: -533661968
+    guid: -1732313424
     name: bubble_guy_walk
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bubble_guy_walk_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 4
         width: 16
         height: 24
       spriteId: c0e65b2f74f784234964f14a1017ef1d
-    - name: bubble_guy_walk_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 4
         width: 13
         height: 24
       spriteId: adf447aa9dc684a12bca6f2d71d249d2
-    - name: bubble_guy_walk_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 4
@@ -329,3 +333,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 64}

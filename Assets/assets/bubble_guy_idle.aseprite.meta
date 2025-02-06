@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -324,46 +325,51 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: 2106981093
+    guid: -1336193863
     name: bubble_guy_idle
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bubble_guy_idle_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
         width: 12
         height: 25
       spriteId: c6482c57f8dd94520863756ce7691170
-    - name: bubble_guy_idle_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
         width: 12
         height: 24
       spriteId: 3a7a8463758874146a7502f55e9668d7
-    - name: bubble_guy_idle_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
         width: 12
         height: 23
       spriteId: 566a6d80b7b444835af806b59bd7effa
-    - name: bubble_guy_idle_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
         width: 12
         height: 24
       spriteId: b66e689947c894031b0a4acf3ebd5eb8
-    - name: bubble_guy_idle_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
@@ -425,3 +431,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 64}

@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -364,54 +365,60 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: 729890324
+    guid: -1815679132
     name: bubble_guy_gethit
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bubble_guy_gethit_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
         width: 12
         height: 25
       spriteId: 72b9de458dd30de49949364d6ce9f5e2
-    - name: bubble_guy_gethit_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
         width: 12
         height: 25
       spriteId: f970479f4e0573b428afba749417b9d1
-    - name: bubble_guy_gethit_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
         width: 12
         height: 25
       spriteId: f324b820dda6ebd46bd2c1cf74e8c9ed
-    - name: bubble_guy_gethit_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
         width: 12
         height: 25
       spriteId: dc94c3d40d1fd9a4c8608160f9de84aa
-    - name: bubble_guy_gethit_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
         width: 12
         height: 25
       spriteId: d083ba2633a57b44ba40f622ad8445fa
-    - name: bubble_guy_gethit_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 10
         y: 4
@@ -461,3 +468,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 32, y: 32}
+  previousTextureSize: {x: 64, y: 128}

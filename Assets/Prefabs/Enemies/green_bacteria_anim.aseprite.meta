@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -204,38 +205,42 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 174565019
+    guid: -1243694393
     name: green_bacteria_anim
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: green_bacteria_anim_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 1
         width: 16
         height: 14
       spriteId: 770dc69408e9e42aeb10deb7fe38a76f
-    - name: green_bacteria_anim_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 1
         width: 16
         height: 14
       spriteId: 72764839b89b54ad89d913fd2e5f57ef
-    - name: green_bacteria_anim_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 1
         width: 16
         height: 14
       spriteId: 8402440d6f19349b88065541dfc2e0f2
-    - name: green_bacteria_anim_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 1
@@ -285,3 +290,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 16, y: 16}
+  previousTextureSize: {x: 64, y: 64}
